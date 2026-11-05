@@ -1,0 +1,10 @@
+Package: mypkgr
+Title: Analyse de Conformité et Capabilité de Processus (Loi de Laplace-Gauss)
+Version: 0.0.0.9000
+Authors@R:
+    person("DJIBRIL", "NWANSI", , "d3982224@gmail.com", role = c("aut", "cre"))
+Description: Permet de realiser une analyse statistique complete de controlede la qualité en appliquant la loi normale(Laplace-Gauss). La bibliotheque evalue l'ajustement des donness, calcule les probabilités théoriques et empiriques par rapport aux limites de specification, intègre un test de normalité de Shapiro-Wilk avec seuil d'alerte, et calcule automatiquement les indices de capabilité du procédé.
+License: `MIT + file LICENSE
+Config/roxygen2/version: 8.1.1
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
