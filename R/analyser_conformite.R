@@ -25,18 +25,19 @@ analyser_conformite <- function(x, lsl, usl, alpha = 0.05) {
   if(lsl>=usl){
     stop("La limite inferieure (lsl) doit etre strictement inferieure a la limite superieure (usl).")
   }
-
+  #Nettoyage d'éventuelles valeurs manquantes
 
   x <- stats::na.omit(x)
-
+  #Statistiques descriptives de base
   mu <- mean(x)
   sigma <- sd(x)
-
+  #Probabilité théorique selon la loi normale et proportion empirique
   prob_theorique <- stats::pnorm(usl, mean = mu, sd = sigma)-stats::pnorm(lsl, mean = mu, sd = sigma)
   prop_empirique <- mean(x >= lsl & x <= usl)
-
+  #Test de normalité de Shapiro-Wilk
   test_normalite <- stats::shapiro.test(x)
   normalite_respectee <- test_normalite$p.value >= alpha
+
   if(!normalite_respectee){
     message("---AVERTISSEMENT QUALITE---")
     message(sprintf("La p-value du test de Shapiro-Wilk est de %.4f (inferieure a %.2f).",
