@@ -1,3 +1,13 @@
+#' Graphique Animé de dispersion et Controle Qualité
+#'
+#' Génère une animation fluide de la distribution des mesures et de la courbe de Gauss.
+#'
+#' @param x Vecteur numérique des mesures du lot.
+#' @param lsl Limite inférieure de spécification.
+#' @param usl Limite supérieure de spécification.
+#' @param pas Nombre de mesures ajoutées à chaque image
+#' @param fichier_gif Chemin du fichier GIF de sortie (Si NULL affiche dans le volet Plots).
+#' @export
 tracer_dispersion_animee <- function(x, lsl, usl, pas = 5){
   if (lsl >= usl) stop("La limite inferieure (lsl) doit etre strictement inferieure a la limite superieure(usl)")
 
